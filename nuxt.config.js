@@ -61,6 +61,7 @@ export default {
   ],
   amp: {
     origin: 'http://localhost:3000',
+    mode: 'false',
   },
   /*
    ** Axios module configuration
