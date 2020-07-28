@@ -5,18 +5,62 @@
     <p>
       <amp-img
         src="https://pbs.twimg.com/profile_images/1284697347545391104/-FlyD_jc_200x200.jpg"
-        width="400"
-        height="400"
+        width="200"
+        height="200"
       />
     </p>
     <p><nuxt-link to="/" v-text="'TOP'" /></p>
     <p><nuxt-link to="/amp-on" v-text="'アンプあり(通常)'" /></p>
     <p><nuxt-link to="/amp-off" v-text="'アンプなし(通常)'" /></p>
+    <section id="idOne">
+      <h2 v-text="'idOne'" />
+      <p>てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと</p>
+      <p>てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと</p>
+      <p>てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと</p>
+      <p>てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと</p>
+    </section>
+    <section id="idTwo">
+      <h2 v-text="'idTwo'" />
+      <p>てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと</p>
+      <p>てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと</p>
+      <p>てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと</p>
+      <p>てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと</p>
+    </section>
+    <section id="idThree">
+      <h2 v-text="'idThree'" />
+      <p>てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと</p>
+      <p>てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと</p>
+      <p>てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと</p>
+      <p>てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと</p>
+    </section>
+    <section id="idFour">
+      <h2 v-text="'idFour'" />
+      <p>てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと</p>
+      <p>てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと</p>
+      <p>てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと</p>
+      <p>てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと</p>
+    </section>
+    <section class="api-contsiner">
+      <h2 v-text="'topページからAPIでデータ取得'" />
+      <code>
+        {{ posts }}
+      </code>
+    </section>
   </div>
 </template>
 <script>
 export default {
   amp: 'only',
   ampLayout: 'amp',
+  async asyncData({ $axios }) {
+    const url = 'https://gifted-swirles-2a2b21.netlify.app'
+    const response = await $axios.$get(url)
+    return {
+      posts: response,
+    }
+  },
 }
 </script>
+<style>
+@import '~/assets/styles/default.amp.css';
+</style>

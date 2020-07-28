@@ -1,3 +1,9 @@
 .__amp .red-text {
   color: red;
 }
+
+.__amp .api-contsiner {
+  background-color: blanchedalmond;
+  overflow: hidden;
+  padding: 16px;
+}
