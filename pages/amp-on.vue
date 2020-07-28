@@ -5,6 +5,8 @@
     <p>
       <amp-img
         src="https://pbs.twimg.com/profile_images/1284697347545391104/-FlyD_jc_200x200.jpg"
+        width="400"
+        height="400"
       />
     </p>
     <p><nuxt-link to="/" v-text="'TOP'" /></p>
