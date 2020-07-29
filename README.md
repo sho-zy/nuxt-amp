@@ -18,3 +18,5 @@ $ yarn generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+curl -X GET https://systemj.xsrv.jp/wp-json/wp/v2/posts/1

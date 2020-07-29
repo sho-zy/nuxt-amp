@@ -10,8 +10,8 @@
       />
     </p>
     <p><nuxt-link to="/" v-text="'TOP'" /></p>
-    <p><nuxt-link to="/amp-on" v-text="'アンプあり(通常)'" /></p>
-    <p><nuxt-link to="/amp-off" v-text="'アンプなし(通常)'" /></p>
+    <p><nuxt-link to="/amp-on" v-text="'アンプページ'" /></p>
+    <p><nuxt-link to="/amp-off" v-text="'通常ページ'" /></p>
     <section id="idOne">
       <h2 v-text="'idOne'" />
       <p>てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと</p>
@@ -40,5 +40,22 @@
       <p>てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと</p>
       <p>てすとてすとてすとてすとてすとてすとてすとてすとてすとてすと</p>
     </section>
+    <section class="api-contsiner">
+      <h2 v-text="'topページからHTTP通信でデータ取得'" />
+      <code>
+        {{ posts }}
+      </code>
+    </section>
   </div>
 </template>
+<script>
+export default {
+  async asyncData({ $axios }) {
+    const url = 'https://gifted-swirles-2a2b21.netlify.app'
+    const response = await $axios.$get(url)
+    return {
+      posts: response,
+    }
+  },
+}
+</script>
